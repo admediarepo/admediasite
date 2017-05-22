@@ -1,0 +1,3 @@
+Deny from all
+RewriteEngine on
+RewriteRule !toon\.php$ - [F]
