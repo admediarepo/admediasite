@@ -6,6 +6,9 @@
 	$typeNavbar = 2;
 
 	$activeNavbar = 'contatos';
+
+	$secret = '6Lf5hCIUAAAAAI4SI-6XIDAyu9l1GTfctubBrAEv';
+	$publickey = 'AIzaSyBkIvALalO05rdva99ehdkc4DlVonpPe9g';
 ?>
 
 <!DOCTYPE HTML>
@@ -38,7 +41,7 @@
 
 							<!-- Content -->
 								<div class="content">
-									<form>
+									<form method="POST">
 										<div class="row 50%">
 											<div class="6u 12u(mobile)">
 												<input type="text" name="name" placeholder="Nome" />
@@ -52,8 +55,8 @@
 
 												<select class="12u">
 												<option disabled selected>Selecione um assunto:</option>
-													<option>Assunto1</option>
-													<option>Assunto2</option>
+													<option value="assunto1">Assunto1</option>
+													<option value="assunto2">Assunto2</option>
 												</select>
 											</div>
 										</div>
@@ -111,12 +114,34 @@
 	        });
 	      }
 	    </script>
-	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkIvALalO05rdva99ehdkc4DlVonpPe9g&callback=initMap"></script>
+	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?= $publickey ?>&callback=initMap"></script>
 	</body>
 </html>
 
 <?php
 
+if(isset($_POST['submit']) && !empty($_POST['submit'])){
+	if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){
+        
+        //get verify response data
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+        $responseData = json_decode($verifyResponse);
+        if($responseData->success){
+            //contact form submission code
+            $name = !empty($_POST['name'])? preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['name']):'';
+            $email = !empty($_POST['email'])? preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['email']):'';
+            $message = !empty($_POST['message'])?  preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['message']):'';
 
+            $subject = !empty($_POST['subject'])?  preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['subject']):'';
+            
+        }else{
+        	alert('danger', 'Error!', 'Robot verification failed, please try again.');
+        	return false;
+        }
+    }else{
+    	alert('danger', 'Error!', 'Please click on the reCAPTCHA box.');
+        return false;
+    }
+}
 
 ?>
