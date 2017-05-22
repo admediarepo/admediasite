@@ -20,18 +20,18 @@
 				</a>
 				<nav id="nav">
 					<ul>
-						<li class="<?= ($activeNavbar == 'inicio') ? 'current' : ''; ?>"><a href="index.php">INÍCIO</a></li>
-						<li class="<?= ($activeNavbar == 'portofolio') ? 'current' : ''; ?>"><a href="portofolio.php">PORTOFOLIO</a></li>
+						<li class="<?= ($activeNavbar == 'inicio') ? 'current' : ''; ?>"><a href="index">INÍCIO</a></li>
+						<li class="<?= ($activeNavbar == 'portofolio') ? 'current' : ''; ?>"><a href="portofolio">PORTOFOLIO</a></li>
 						<li class="submenu <?= ($activeNavbar == 'servicos') ? 'current' : ''; ?>" >
 							<a href="#">SERVIÇOS</a>
 							<ul>
-								<li><a href="consultoria.php">CONSULTORIA</a></li>
-								<li><a href="webdesign.php">WEB DESIGN</a></li>
-								<li><a href="software.php">SOFTWARE</a></li>
-								<li><a href="gestao.php">GESTÃO DE REDES SOCIAIS</a></li>
+								<li><a href="servicos?type=consultoria">CONSULTORIA</a></li>
+								<li><a href="servicos?type=web-design">WEB DESIGN</a></li>
+								<li><a href="servicos?type=software">SOFTWARE</a></li>
+								<li><a href="servicos?type=redes-sociais">GESTÃO DE REDES SOCIAIS</a></li>
 							</ul>
 						</li>
-						<li class="<?= ($activeNavbar == 'contatos') ? 'current' : ''; ?>"><a href="contact.php">CONTATOS</a></li>
+						<li class="<?= ($activeNavbar == 'contatos') ? 'current' : ''; ?>"><a href="contact">CONTATOS</a></li>
 					</ul>
 				</nav>
 			</header>

@@ -65,10 +65,11 @@
 										<div class="row">
 											<div class="12u">
 												<ul class="buttons">
-													<li><input type="submit" class="special" value="ENVIAR" /></li>
+													<li><input type="submit" name="submit" class="special" value="ENVIAR" /></li>
 												</ul>
 											</div>
 										</div>
+										<div class="g-recaptcha" data-sitekey="6Lf5hCIUAAAAAMwzUP83wzZQy4VpCNFqvw2MN_Jv"></div>
 									</form>
 									<br><br>
 									<h2>ONDE NOS PODE ENCONTRAR ?</h2>
@@ -91,6 +92,8 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
+
 			<script>
 
 	      function initMap() {
@@ -111,3 +114,9 @@
 	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkIvALalO05rdva99ehdkc4DlVonpPe9g&callback=initMap"></script>
 	</body>
 </html>
+
+<?php
+
+
+
+?>
