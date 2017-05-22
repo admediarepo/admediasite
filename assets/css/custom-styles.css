@@ -559,13 +559,11 @@ line-height: 1.428571429;
  
  @media(min-width:768px) {
      #page-wrapper{
-               margin: 0 0 0 260px;
+        margin: 0 0 0 260px;
         padding: 15px 30px;
-        
-               min-height: 1200px;
+        min-height: 1200px;
 		
     }
-	
 	
     .navbar-side {
         z-index: 1;
@@ -576,6 +574,18 @@ line-height: 1.428571429;
  border-radius: 0px; 
 }
    
+}
+
+@media(max-width: 768px) {
+    .slogan {
+         font-size: 22px;
+    }
+    .top-navbar {
+        height: 12%;
+    }
+    .navbar-side {
+      top:60px;
+    }
 }
  @media(max-width:480px) {
 .page-header small {
@@ -636,4 +646,11 @@ font-size: 19px;
     overflow: hidden;
     filter: alpha(opacity=0);
     background-size: cover;
+}
+
+.slogan {
+  text-align: center;
+
+  margin-top: 13px;
+  color: #ee3825;
 }

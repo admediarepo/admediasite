@@ -8,7 +8,7 @@
                 </button>
                 <a class="navbar-brand" href="?page=default"><img src="../images/logo_horizontal.png" alt="Image Admedia" height="50" /></a>
             </div>
-            <h2 style="text-align: center;margin-top: 13px;color: #ee3825;">DESENVOLVEMOS IDEIAS 360º</h2>
+            <h2 class="slogan" >DESENVOLVEMOS IDEIAS 360º</h2>
             <!--ul class="nav navbar-top-links navbar-right" >
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
