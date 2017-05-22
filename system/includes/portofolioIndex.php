@@ -4,7 +4,7 @@
 
 	<div class="6u 12u(narrower)">
 		<section style="word-wrap: break-word;text-align: justify;">
-			<a href="#<?= $trabalho['id'] ?>" class="image featured"><img src="images/<?= $trabalho['image'] ?>" alt="<?= $trabalho['title'] ?>" /></a>
+			<a href="#<?= $trabalho['id'] ?>" class="image featured"><img src="images/projects/<?= $trabalho['mainimage'] ?>" alt="<?= $trabalho['title'] ?>" width="100" /></a>
 			<header>
 				<h3><?= $trabalho['title'] ?></h3>
 			</header>
