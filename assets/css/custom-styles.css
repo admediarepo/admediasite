@@ -367,7 +367,6 @@ margin:0px;
 color: #fff;
 width: 260px;
 text-align: left;
-height: 60px;
 font-size: 24px;
 font-weight: 700;
 text-transform: uppercase;
@@ -576,18 +575,18 @@ line-height: 1.428571429;
    
 }
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
     .slogan {
-         font-size: 22px;
+         font-size: 0px;
     }
     .top-navbar {
         height: 12%;
     }
     .navbar-side {
-      top:60px;
+      top:50px;
     }
-}
  @media(max-width:480px) {
+}
 .page-header small {
 display: block;
 padding-top: 14px;
@@ -610,7 +609,7 @@ font-size: 19px;
 }
 .navbar-brand > img {
     display: block;
-    margin: -10px;
+    margin: -15px;
 }
 
 .preview-imgs {

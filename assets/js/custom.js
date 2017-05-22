@@ -14,7 +14,7 @@
             $('#main-menu').metisMenu();
 			
             $(window).bind("load resize", function () {
-                if ($(this).width() < 768) {
+                if ($(this).width() < 751) {
                     $('div.sidebar-collapse').addClass('collapse')
                 } else {
                     $('div.sidebar-collapse').removeClass('collapse')
