@@ -1800,7 +1800,8 @@
 
 			.image.featured img {
 				display: block;
-				width: 100%;
+				width: 50%;
+				margin: 0 auto;
 			}
 
 /* Icon */
