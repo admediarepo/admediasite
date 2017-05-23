@@ -187,7 +187,7 @@ if(isset($_POST['submitContact'])){
             $data = [
             	'message' => $message,
             	'mail' => $email,
-            	'assunto' => $subject,
+            	'subject' => $subject,
             	'name' => $name,
             	'data' => date('d-m-Y H:i:s'),
             	'see' => 0,

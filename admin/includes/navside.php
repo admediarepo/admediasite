@@ -44,8 +44,8 @@
                             </li>
                         </ul>
                     </li>
-					<li>
-                        <a href="#"><i class="fa fa-envelope"></i> Mail Box</a>
+					<li class="<?= ($_GET['page'] == 'mailbox/get') ? 'active-menu' : ''  ; ?>">
+                        <a  href="?page=mailbox/get"><i class="fa fa-envelope"></i> Mail Box</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-share-square"></i> Social Media</a>
