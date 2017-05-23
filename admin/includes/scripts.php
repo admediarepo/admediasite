@@ -74,7 +74,7 @@
             }, 2200);
         }
     } */
-    function alertMessage(tipo, title = "Sucesso!", message, div = '#alertAdMedia', desaparecer = true) {
+    function alertMessage(tipo, title = "Sucesso!", message) {
         $.notify({
             title: title,
             icon: 'fa fa-warning',

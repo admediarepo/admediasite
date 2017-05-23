@@ -1,7 +1,7 @@
 <?php 
 	require_once 'core/init.php';
 
-	$currentPage = 'Software'; 
+	$currentPage = 'Contacte-nos'; 
 
 	$typeNavbar = 2;
 
@@ -41,7 +41,7 @@
 
 							<!-- Content -->
 								<div class="content">
-									<form method="POST">
+									<form method="POST" action="#">
 										<div class="row 50%">
 											<div class="6u 12u(mobile)">
 												<input type="text" name="name" placeholder="Nome" />
@@ -53,8 +53,8 @@
 										<div class="row 50%">
 											<div class="12u">
 
-												<select class="12u">
-												<option disabled selected>Selecione um assunto:</option>
+												<select class="12u" name="subject">
+												<option disabled selected >Selecione um assunto:</option>
 													<option value="assunto1">Assunto1</option>
 													<option value="assunto2">Assunto2</option>
 												</select>
@@ -67,12 +67,13 @@
 										</div>
 										<div class="row">
 											<div class="12u">
+												<div class="g-recaptcha" style=" margin: 10px auto; display: block; width: 50%;" data-sitekey="6Lf5hCIUAAAAAMwzUP83wzZQy4VpCNFqvw2MN_Jv"></div>
 												<ul class="buttons">
-													<li><input type="submit" name="submit" class="special" value="ENVIAR" /></li>
+													<li><input type="submit" name="submitContact" class="special" value="ENVIAR" /></li>
 												</ul>
 											</div>
 										</div>
-										<div class="g-recaptcha" data-sitekey="6Lf5hCIUAAAAAMwzUP83wzZQy4VpCNFqvw2MN_Jv"></div>
+										
 									</form>
 									<br><br>
 									<h2>ONDE NOS PODE ENCONTRAR ?</h2>
@@ -96,6 +97,7 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
+			<script src="assets/js/bootstrap-notify.min.js"></script>
 
 			<script>
 
@@ -113,14 +115,43 @@
 	          title: 'A NOSSA LOCALIZAÇÃO'
 	        });
 	      }
+	          function alertMessage(tipo, title = "Sucesso!", message) {
+        $.notify({
+            title: title,
+            icon: 'fa fa-warning',
+            message: message
+        },{
+            // settings
+            type: tipo,
+            placement: {
+                from: "top",
+                align: "center"
+            },
+            delay: 4000,
+            allow_dismiss: false,
+            z_index: 99999,
+            template: '<div data-notify="container"  class="container 50% alert alert-{0}">' +
+					'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+					'<span data-notify="icon" style="margin-top:10px;"></span> ' +
+					'<span data-notify="title">{1}</span> ' +
+					'<span data-notify="message">{2}</span>' +
+				'</div>'
+        });
+}
 	    </script>
+	    <style type="text/css">
+	    	
+	    </style>
 	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?= $publickey ?>&callback=initMap"></script>
 	</body>
 </html>
 
 <?php
 
-if(isset($_POST['submit']) && !empty($_POST['submit'])){
+
+if(isset($_POST['submitContact'])){
+
+	
 	if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){
         
         //get verify response data
@@ -128,11 +159,45 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
         $responseData = json_decode($verifyResponse);
         if($responseData->success){
             //contact form submission code
-            $name = !empty($_POST['name'])? preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['name']):'';
-            $email = !empty($_POST['email'])? preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['email']):'';
-            $message = !empty($_POST['message'])?  preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['message']):'';
+            $name = !empty($_POST['name'])? preg_replace('/[^-a-zA-Z]/', '', $_POST['name']): NULL;
+            $email = !empty($_POST['email'])? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL):NULL;
+            $message = !empty($_POST['message'])?  filter_var($_POST['message'], FILTER_SANITIZE_STRING) : NULL;
 
-            $subject = !empty($_POST['subject'])?  preg_replace('/[^-a-zA-Z0-9-]/', '', $_POST['subject']):'';
+            $subject = !empty($_POST['subject'])?  filter_var($_POST['subject'], FILTER_SANITIZE_STRING) : NULL;
+
+            if($name == NULL){
+            	alert('warning', 'Ups!', 'Preencha o seu nome!');
+        		return false;
+            }
+
+            if($email == NULL){
+            	alert('warning', 'Ups!', 'Preencha o seu email!');
+        		return false;
+            }
+
+            if($message == NULL){
+            	alert('warning', 'Ups!', 'Escreva uma mensagem!');
+        		return false;
+            }
+            if($subject == NULL){
+            	alert('warning', 'Ups!', 'Escolha um assunto!');
+        		return false;
+            }
+
+            $data = [
+            	'message' => $message,
+            	'mail' => $email,
+            	'assunto' => $subject,
+            	'name' => $name,
+            	'data' => date('d-m-Y H:i:s'),
+            	'see' => 0,
+
+            ];
+
+            $db->insert('messages',  $data);
+            alert('success', 'Sucesso!', 'Mensagem enviada com sucesso!');
+        	return false;
+
             
         }else{
         	alert('danger', 'Error!', 'Robot verification failed, please try again.');
