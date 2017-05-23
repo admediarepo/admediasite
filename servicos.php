@@ -26,7 +26,7 @@
 		break;
 	}
 
-	$result = $db->ObjectBuilder()->where('type', $type2)->get('projects');
+	$result = $db->ObjectBuilder()->where('type', $type2)->getOne('projects');
 ?>
 
 <!DOCTYPE HTML>
@@ -40,51 +40,59 @@
 
 			<?php require_once 'system/includes/navbar.php'; ?>
 
-					<!-- One -->
+									<!-- One -->
 						<section class="wrapper style4 container" style="margin-top: 7%; ">
 
 							<div class="row 150%">
-							<?php if($db->count): ?>
-							<?php foreach ($result as $project ): ?>
-								<div class="6u 12u(narrower)">
-									<div class="content">
-										<section>
-											<a href="#" class="image featured">
-											<?php if(file_exists('images/projects/'.$project->mainimage)): ?>
-												<img src="images/projects/<?= $project->mainimage ?>" alt="<?= $project->title ?>" width="100" /></a>
-											<?php else: ?>
-												<img src="images/projects/noimg.png" alt="<?= $project->title ?>" width="100" /></a>
-											<?php endif; ?>
-
-											</a>
-											<header>
-												<h3 style="text-align: center;"><?= $project->title ?></h3>
-											</header>
-											<p style="text-align:justify;"><?= $project->desc ?></p>
-										</section>
-									</div>
-									</div>
-							<?php endforeach; ?>
-
-							<?php else: ?>
-
-								<div class="12u 12u(narrower)">
-									<div class="content">
-										<section>
-											<h2 style="text-align: center;">Lamentamos, mas não há nenhum projeto nesta área!</h2>
-											<img src="images/nothing.png" style="margin: auto;opacity: 0.7;display: block;" /></a>
-										</section>
-									</div>
-									</div>
-							<?php endif; ?>
-
+								<div class="<?= ($result) ? '8': '12' ; ?>u 12u(narrower)">
+							<!-- Content -->
+										<div class="content">
+											<section>
+												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+												<header>
+													<h3>CONSTULTORIA</h3>
+												</header>
+												<p>Descrição consultoria!</p>
+											</section>
+										</div>
 								</div>
-						</section>
+							<?php if($result): ?>
+								<div class="4u 12u(narrower)">
 
-				
-			<?php require_once 'system/includes/footer.php'; ?>
+									<!-- Sidebar -->
+									
+										<div class="sidebar">
+											<section>
+												<a href="#" class="image featured"><img src="images/<?= $result->mainimage ?>" alt="<?= $result->title ?>" /></a>
+												<header>
+													<h3><?= $result->title ?></h3>
+												</header>
+												<p><?= $result->sum ?></p>
+												<footer>
+													<ul class="buttons">
+														<li><a href="#" class="button small">VER MAIS</a></li>
+													</ul>
+												</footer>
+											</section><br>
 
-		</div>
+											<!--section>
+												<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+												<header>
+													<h3>PROJETO 2</h3>
+												</header>
+												<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+												<footer>
+													<ul class="buttons">
+														<li><a href="#" class="button small">VER MAIS</a></li>
+													</ul>
+												</footer>
+											</section-->
+										</div>
+									</div>
+								<?php endif; ?>
+								</div>
+							</section>
+		<?php require_once 'system/includes/footer.php'; ?>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
