@@ -1,11 +1,11 @@
 <?php $projects = $db->ObjectBuilder()->get('projects') ?>
-
 <?php foreach ($projects as $project): ?>
+
 			<div class="6u 12u(narrower)">
 				<section>
 					<a href="projeto?id=<?=$project->id?>" class="image featured">
 					<?php if(file_exists('images/projects/'.$project->mainimage)): ?>
-						<img src="images/projects/<?= $project->mainimage ?>" alt="<?= $project->title ?>" width="100" /></a>
+						<img src="images/projects/<?= $project->mainimage ?>" alt="<?= $project->title ?>" style="object-fit: cover; width: 80%; height: 30vh; min-height: 25vh;" /></a>
 					<?php else: ?>
 						<img src="images/projects/noimg.png" alt="<?= $project->title ?>" width="100" /></a>
 					<?php endif; ?>
@@ -14,7 +14,6 @@
 					</header>
 					<p><?= $project->desc ?></p>
 				</section>
-
-			</div>
+	</div>
 
 	<?php endforeach; ?>
