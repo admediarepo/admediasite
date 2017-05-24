@@ -33,6 +33,14 @@
 <html>
 	<head>
 		<?php require_once 'system/includes/header.php'; ?>
+		<style type="text/css">
+			.content > section > header > h3 {
+				font-weight: 700;
+			}
+			.content > section > img {
+				width: 100%;
+			}
+		</style>
 	</head>
 	
 	<body class="contact">
@@ -46,15 +54,54 @@
 							<div class="row 150%">
 								<div class="<?= ($result) ? '8': '12' ; ?>u 12u(narrower)">
 							<!-- Content -->
+									<?php if($type2 == 2): ?>
+										<div class="content">
+											<section>
+												<img src=" http://placehold.it/700x300" alt="Consultoria" />
+												<header>
+													<h3>CONSTULTORIA</h3>
+												</header>
+												<p><b>Ut in faucibus neque. Maecenas eget posuere eros. Aliquam erat volutpat. Integer fringilla magna ut dolor ornare, a feugiat ex suscipit. Praesent eros lacus, varius quis orci nec, lobortis volutpat lorem. Vivamus sagittis dolor vitae diam posuere, quis viverra arcu cursus. 
+												</b></p>
+
+												<p>Ut in faucibus neque. Maecenas eget posuere eros. Aliquam erat volutpat. Integer fringilla magna ut dolor ornare, a feugiat ex suscipit. Praesent eros lacus, varius quis orci nec, lobortis volutpat lorem. Vivamus sagittis dolor vitae diam posuere, quis viverra arcu cursus. Curabitur euismod lorem lectus, eu hendrerit metus fringilla ac. Ut sit amet egestas est, vitae viverra ex. Cras ac volutpat sapien, ac tristique quam. Vestibulum maximus leo in odio blandit vestibulum. Integer consequat pulvinar ante in tristique. Ut accumsan metus id hendrerit blandit. Etiam eleifend venenatis efficitur. Pellentesque non fringilla odio. In at quam et eros vehicula consequat. Praesent dapibus metus neque.</p>
+											</section>
+										</div>
+									<?php elseif($type2 == 1): ?>
 										<div class="content">
 											<section>
 												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 												<header>
-													<h3>CONSTULTORIA</h3>
+													<h3>WEB DESIGN</h3>
 												</header>
-												<p>Descrição consultoria!</p>
+												<p>Ut in faucibus neque. Maecenas eget posuere eros. Aliquam erat volutpat. Integer fringilla magna ut dolor ornare, a feugiat ex suscipit. Praesent eros lacus, varius quis orci nec, lobortis volutpat lorem. Vivamus sagittis dolor vitae diam posuere, quis viverra arcu cursus. Curabitur euismod lorem lectus, eu hendrerit metus fringilla ac. Ut sit amet egestas est, vitae viverra ex. Cras ac volutpat sapien, ac tristique quam. Vestibulum maximus leo in odio blandit vestibulum. Integer consequat pulvinar ante in tristique. Ut accumsan metus id hendrerit blandit. Etiam eleifend venenatis efficitur. Pellentesque non fringilla odio. In at quam et eros vehicula consequat. Praesent dapibus metus neque.</p>
 											</section>
 										</div>
+
+									<?php elseif($type2 == 3): ?>
+										<div class="content">
+											<section>
+												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+												<header>
+													<h3>REDES SOCIAIS</h3>
+												</header>
+												<p>Ut in faucibus neque. Maecenas eget posuere eros. Aliquam erat volutpat. Integer fringilla magna ut dolor ornare, a feugiat ex suscipit. Praesent eros lacus, varius quis orci nec, lobortis volutpat lorem. Vivamus sagittis dolor vitae diam posuere, quis viverra arcu cursus. Curabitur euismod lorem lectus, eu hendrerit metus fringilla ac. Ut sit amet egestas est, vitae viverra ex. Cras ac volutpat sapien, ac tristique quam. Vestibulum maximus leo in odio blandit vestibulum. Integer consequat pulvinar ante in tristique. Ut accumsan metus id hendrerit blandit. Etiam eleifend venenatis efficitur. Pellentesque non fringilla odio. In at quam et eros vehicula consequat. Praesent dapibus metus neque.</p>
+											</section>
+										</div>
+									<?php elseif($type2 == 4): ?>
+										<div class="content">
+											<section>
+												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+												<header>
+													<h3>software</h3>
+												</header>
+												<p>Ut in faucibus neque. Maecenas eget posuere eros. Aliquam erat volutpat. Integer fringilla magna ut dolor ornare, a feugiat ex suscipit. Praesent eros lacus, varius quis orci nec, lobortis volutpat lorem. Vivamus sagittis dolor vitae diam posuere, quis viverra arcu cursus. Curabitur euismod lorem lectus, eu hendrerit metus fringilla ac. Ut sit amet egestas est, vitae viverra ex. Cras ac volutpat sapien, ac tristique quam. Vestibulum maximus leo in odio blandit vestibulum. Integer consequat pulvinar ante in tristique. Ut accumsan metus id hendrerit blandit. Etiam eleifend venenatis efficitur. Pellentesque non fringilla odio. In at quam et eros vehicula consequat. Praesent dapibus metus neque.</p>
+											</section>
+										</div>
+
+									<?php endif; ?>
+
+
 								</div>
 							<?php if($result): ?>
 								<div class="4u 12u(narrower)">
@@ -62,15 +109,17 @@
 									<!-- Sidebar -->
 									
 										<div class="sidebar">
-											<section>
-												<a href="#" class="image featured"><img src="images/<?= $result->mainimage ?>" alt="<?= $result->title ?>" /></a>
+											<section style="border: solid 1px rgba(128, 136, 133, 0.25); padding: 10px;">
+											<h3 style="text-align: center; font-weight: 500;"> PROJETO RELACIONADO </h3>
+											<hr>
+												<a href="projeto?id=<?= $result->id ?>" class="image featured"><img src="images/projects/<?= $result->mainimage ?>" alt="<?= $result->title ?>" style="object-fit: cover;width: 90%; max-height: 240px;min-height: 100px;" /></a>
 												<header>
-													<h3><?= $result->title ?></h3>
+													<h3 style="font-weight: 600; margin-left: 10px;"><?= $result->title ?></h3>
 												</header>
-												<p><?= $result->sum ?></p>
+												<p style="margin-left: 10px; text-align: justify;"><?= $result->sum ?></p>
 												<footer>
-													<ul class="buttons">
-														<li><a href="#" class="button small">VER MAIS</a></li>
+													<ul class="buttons" style="margin:auto; display: block; text-align: center;padding: 15px;">
+														<li style="width: 100%;"><a href="projeto?id=<?= $result->id ?>" class="button small" style="width: 100%;">VER MAIS <i class="fa fa-plus" aria-hidden="true"></i></a></li>
 													</ul>
 												</footer>
 											</section><br>

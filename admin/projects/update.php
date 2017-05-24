@@ -82,7 +82,7 @@ if(isset($_POST['submitUpdate'])){
 		return false;
 	}
 
-	if(strlen($projectTitle) > 100){
+	if(strlen($projectTitle) > 200){
 		alert('warning', 'Ups!', 'Titulo não pode conter mais de 100 caracteres');
 		return false;
 	}
@@ -91,8 +91,8 @@ if(isset($_POST['submitUpdate'])){
 		alert('warning', 'Ups!', 'Preencha o sumario!');
 		return false;
 	}
-	if(strlen($projectSum) > 200){
-		alert('warning', 'Ups!', 'Sumario não pode conter mais de 200 caracteres');
+	if(strlen($projectSum) > 600){
+		alert('warning', 'Ups!', 'Sumario não pode conter mais de 600 caracteres');
 		return false;
 	}
 
@@ -106,7 +106,7 @@ if(isset($_POST['submitUpdate'])){
 		return false;
 	}
 
-	if(strlen($projectDesc) > 500){
+	if(strlen($projectDesc) > 3000){
 		alert('warning', 'Ups!', 'Descrição não pode conter mais de 500 caracteres');
 		return false;
 	}

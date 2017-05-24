@@ -27,24 +27,48 @@
 			#mainimage {
 				display: block;
 				margin:auto;
-				width: 150vh;
-				height: 50vh;
+				width: 90%;
+				max-height: 50vh;
 				object-fit: cover;
 				overflow: hidden;
 			}
 			.project-aditionalimages {
-				margin:10px;
+				margin: 10px;
+    			display: block;
+    			text-align: center;
 
 			}
 			.project-aditionalimage {
-				width: 10%;
+				width: 20vh;
+				min-width: 18vh;
 				margin-right: 5px;
+				max-width: 20vh;
+				height: 15vh;
+				min-height: 15vh;
+				max-height: 15vh;
+				object-fit: cover;
 			}
 			.project-aditionalimage:hover {
-				opacity:0.7;
+				opacity:0.8;
 				cursor: pointer;
 
 			}
+			@media screen and (max-width: 768px){
+				.project-aditionalimages {
+					margin: 5px;
+
+				}
+
+				.project-aditionalimage {
+					width: 13vh;
+					min-width: 40px;
+					margin-right: 5px;
+					max-width: 15vh;
+					display: inline-block;
+	    			object-fit: cover;
+					overflow: hidden;
+			}
+			} 
 		</style>
 	</head>
 	
@@ -63,17 +87,17 @@
 										<section>
 											<img src="images/projects/<?= $result->mainimage ?>" alt="<?= $result->title ?>" id="mainimage" />
 											<?php if($aditionalmages): ?>
-												<div class="project-aditionalimages">
+												<div class="project-aditionalimages" >
 												<?php foreach($aditionalmages as $img): ?>
 													<img src="images/projects/<?= $img->name ?>" class="project-aditionalimage">
 												<?php endforeach; ?>
 												</div>
 											<?php endif; ?>
 											<header>
-												<h3><?= $result->title ?></h3>
+												<h3 style="font-weight: 700;"><?= $result->title ?></h3>
 											</header>
-											<p><b><?= $result->sum ?></b></p>
-											<p><?= $result->desc ?></p>
+											<p><b style="word-wrap: break-word;text-align: justify;"><?= $result->sum ?></b></p>
+											<p style="word-wrap: break-word;text-align: justify;"><?= $result->desc ?></p>
 										</section>
 									</div>
 								</div>

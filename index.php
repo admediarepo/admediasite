@@ -156,7 +156,7 @@ $activeNavbar = 'inicio';
 					</header>
 					<footer>
 						<ul class="buttons">
-							<li><a href="contact.html" class="button">CONTACTE-NOS!</a></li>
+							<li><a href="contact" class="button">CONTACTE-NOS!</a></li>
 						</ul>
 					</footer>
 
