@@ -16,7 +16,7 @@
                             </li>
                         </ul>
                     </li>
-                                        <li>
+                    <!--li>
                         <a href="#"><i class="fa fa-file-o"></i> Pages<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -43,22 +43,13 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li-->
 					<li class="<?= ($_GET['page'] == 'mailbox/get') ? 'active-menu' : ''  ; ?>">
                         <a  href="?page=mailbox/get"><i class="fa fa-envelope"></i> Mail Box</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-share-square"></i> Social Media</a>
+                        <a href="?page=gallery/view"><i class="fa fa-table"></i> Gallery</a>
                     </li>
-                    
-                    <li>
-                        <a href="#"><i class="fa fa-table"></i> Gallery</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
-
-
 
                     <li>
                         <a href="logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>

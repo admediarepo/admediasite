@@ -110,9 +110,7 @@ if(isset($_POST['submitUpdate'])){
 		alert('warning', 'Ups!', 'Descrição não pode conter mais de 500 caracteres');
 		return false;
 	}
-
-	echo "<pre>";
-	print_r($_FILES);
+	
 	$mainImage = uploadImage('main_image', 1, 1);
 	if($mainImage == 'MAX_IMAGES'){
 		alert('warning', 'Ups!', 'Porfavor selecione apenas 1 imagem');
