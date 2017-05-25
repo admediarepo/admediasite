@@ -5,10 +5,10 @@ session_start();
  */
 $GLOBALS['config'] = [
     'mysql' => [
-        'host'      => 'HOST',
-        'username'  => 'USER',
-        'password'  => 'PASS',
-        'db'        => 'DB'
+        'host'      => 'localhost',
+        'username'  => 'root',
+        'password'  => 'Dofasol123',
+        'db'        => 'admedia'
     ],
     'app' => [
     	'name' => 'AdMedia',
