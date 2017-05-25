@@ -67,7 +67,12 @@
 										</div>
 										<div class="row">
 											<div class="12u">
-												<div class="g-recaptcha" style=" margin: 10px auto; display: block; width: 50%;" data-sitekey="6Lf5hCIUAAAAAMwzUP83wzZQy4VpCNFqvw2MN_Jv"></div>
+												<ul>
+													<li>
+														<div class="g-recaptcha" style=" display: inline-block;" data-sitekey="6Lf5hCIUAAAAAMwzUP83wzZQy4VpCNFqvw2MN_Jv"></div>
+													</li>
+												</ul>
+												
 												<ul class="buttons">
 													<li><input type="submit" name="submitContact" class="special" value="ENVIAR" /></li>
 												</ul>

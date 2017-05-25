@@ -1,9 +1,8 @@
 <?php $trabalhos = $db->get('projects', 4) ?>
+<?php $num = 1; $breaker = 2;  ?>
 
 <?php foreach ($trabalhos as $t => $trabalho): ?>
-<?php if( $t == 2 ): ?>
-<div class="row">
-<?php endif; ?>
+<?php if ($num == 1) echo "<div class='row'>"; ?>
 	<div class="6u 12u(narrower)">
 		<section style="word-wrap: break-word;text-align: justify;">
 			<a href="#<?= $trabalho['id'] ?>" class="image featured">
@@ -18,8 +17,7 @@
 			<p><?= $trabalho['sum'] ?></p>
 		</section>
 	</div>
-<?php if( $t > 2 ): ?>
-</div>
-<?php endif; ?>
+<?php $num++; ?>
+ <?php if ($num > $breaker) { echo '</div>'; $num = 1; }  ?>
 
 <?php endforeach; ?>

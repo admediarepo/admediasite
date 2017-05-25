@@ -1,5 +1,8 @@
 <?php $projects = $db->ObjectBuilder()->get('projects') ?>
+<?php $num = 1; $breaker = 2;  ?>
 <?php foreach ($projects as $project): ?>
+
+	  <?php if ($num == 1) echo "<div class='row'>"; ?>
 
 			<div class="6u 12u(narrower)">
 				<section>
@@ -14,6 +17,7 @@
 					</header>
 					<p><?= $project->desc ?></p>
 				</section>
-	</div>
-
+			</div>
+		<?php $num++; ?>
+        <?php if ($num > $breaker) { echo '</div>'; $num = 1; }  ?>
 	<?php endforeach; ?>
