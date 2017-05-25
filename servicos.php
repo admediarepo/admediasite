@@ -114,9 +114,9 @@
 											<hr>
 												<a href="projeto?id=<?= $result->id ?>" class="image featured"><img src="images/projects/<?= $result->mainimage ?>" alt="<?= $result->title ?>" style="object-fit: cover;width: 90%; max-height: 240px;min-height: 100px;" /></a>
 												<header>
-													<h3 style="font-weight: 600; margin-left: 10px;"><?= $result->title ?></h3>
+													<h3 style="font-weight: 600; word-wrap: break-word; margin-left: 10px;"><?= $result->title ?></h3>
 												</header>
-												<p style="margin-left: 10px; text-align: justify;"><?= $result->sum ?></p>
+												<p style="margin-left: 10px; word-wrap: break-word; text-align: justify;"><?= $result->sum ?></p>
 												<footer>
 													<ul class="buttons" style="margin:auto; display: block; text-align: center;padding: 15px;">
 														<li style="width: 100%;"><a href="projeto?id=<?= $result->id ?>" class="button small" style="width: 100%;">VER MAIS <i class="fa fa-plus" aria-hidden="true"></i></a></li>

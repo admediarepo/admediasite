@@ -200,11 +200,11 @@ if(isset($_POST['submitContact'])){
 
             
         }else{
-        	alert('danger', 'Error!', 'Robot verification failed, please try again.');
+        	alert('danger', 'Error!', 'A verificação falhou por favor tente novamente.');
         	return false;
         }
     }else{
-    	alert('danger', 'Error!', 'Please click on the reCAPTCHA box.');
+    	alert('danger', 'Error!', 'Por favor, verifique que não é um robô!.');
         return false;
     }
 }
