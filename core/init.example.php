@@ -1,4 +1,28 @@
 <?php
+
+
+
+
+
+
+
+/**
+ * ****** RENAME THIS FILE TO: init.php *******
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 session_start();
 /**
  * Global configs, set here!
