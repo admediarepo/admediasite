@@ -1111,7 +1111,7 @@
 		}
 
 	}
-
+	
 	@media screen and (max-width: 840px) {
 
 		.row > * {
@@ -1590,6 +1590,15 @@
 		margin: 0 0 2em 0;
 	}
 
+	ul {
+  		white-space: nowrap;
+	}
+
+	ul, li {
+		list-style: none;
+		display: inline;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		color: inherit;
 		font-weight: 300;
@@ -1652,7 +1661,6 @@
 		margin-bottom: 5em;
 		padding-top: 7em;
 		position: relative;
-		text-align: center;
 	}
 
 		header.special:before, header.special:after {
@@ -2623,6 +2631,7 @@
 				font-size: 13pt;
 				letter-spacing: 0.025em;
 				line-height: 1.5em;
+				background:none;
 			}
 
 		/* Section/Article */
@@ -2700,6 +2709,7 @@
 
 			html, body {
 				overflow-x: hidden;
+				background:none;
 			}
 
 			header.major {
@@ -2998,6 +3008,7 @@
 
 			body {
 				min-width: 320px;
+				background:none;
 			}
 
 			h2 {

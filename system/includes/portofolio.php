@@ -8,9 +8,9 @@
 				<section>
 					<a href="projeto?id=<?=$project->id?>" class="image featured">
 					<?php if(file_exists('images/projects/'.$project->mainimage)): ?>
-						<img src="images/projects/<?= $project->mainimage ?>" alt="<?= $project->title ?>" style="object-fit: cover; width: 80%; height: 30vh; min-height: 25vh;" /></a>
+						<img src="images/projects/<?= $project->mainimage ?>" alt="<?= $project->title ?>"/></a>
 					<?php else: ?>
-						<img src="images/projects/noimg.png" alt="<?= $project->title ?>" width="100" /></a>
+						<img src="images/projects/noimg.png" alt="<?= $project->title ?>"/></a>
 					<?php endif; ?>
 					<header>
 						<h3 style="text-align: center;"><?= $project->title ?></h3>

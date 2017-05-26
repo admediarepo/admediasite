@@ -13,7 +13,7 @@
 
 			<!-- nav bar -->
 			<header id="header" class="<?= (isset($class)) ? $class : '' ; ?>">
-				<a href="#">
+				<a href="index">
 					<div id="logo">
 						<img src="images/logo_horizontal.png" height="40" style="margin-left:10px" />
 					</div>

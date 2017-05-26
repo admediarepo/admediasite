@@ -20,7 +20,7 @@
 					<?php require_once 'system/includes/navbar.php'; ?>
 						
 					<section class="wrapper style4 container" style="margin-top: 7%; ">
-						<h2 style="text-align: center;font-size:40px;"><strong>OS NOSSOS TRABALHOS!</strong></h2>
+						<h2 style="text-align: center;font-size:40px;"><strong>ALGUNS DOS NOSSOS TRABALHOS!</strong></h2>
 						<div class="row 150%">
 							<div class="row">
 								<?php require_once 'system/includes/portofolio.php'; ?>			

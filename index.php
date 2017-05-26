@@ -62,9 +62,10 @@ $activeNavbar = 'inicio';
 
 					<header class="special container" >
 						<span class="icon fa-bar-chart-o"></span>
-						<h2>O QUE <strong>FAZEMOS?</strong></h2>
-						<br />
-						Criada em 2016 a adMedia, tem como objectivo fornecer as melhores soluções tecnologicas a todos os seus clientes e parceiros.Vivendo num mundo empresarial cada vez mais interligado e tecnologicamente mais avançado, já não é possível deixar de acompanhar as novas tendências. Assim sendo, a adMedia foi criada com a missão de disponibilizar a mais nova tecnologia a todos aqueles que desejam, tenham conhecimentos ou não. Tendo já trabalhado com diversos clientes, contamos com um feedback 100% positivo, o que nos permite abraçar o seu desafio com a maior confiança, que em conjunto trabalhando em prol da sua empresa conseguiremos encontrar as melhores soluções ajustada ao seu problema.
+						<h2 style="text-align:center">O QUE <strong>FAZEMOS?</strong></h2>
+						<div id="body">
+							<p style="text-align:justify;">Criada em 2016 a adMedia, tem como objectivo fornecer as melhores soluções tecnologicas a todos os seus clientes e parceiros.Vivendo num mundo empresarial cada vez mais interligado e tecnologicamente mais avançado, já não é possível deixar de acompanhar as novas tendências. Assim sendo, a adMedia foi criada com a missão de disponibilizar a mais nova tecnologia a todos aqueles que desejam, tenham conhecimentos ou não. Tendo já trabalhado com diversos clientes, contamos com um feedback 100% positivo, o que nos permite abraçar o seu desafio com a maior confiança, que em conjunto trabalhando em prol da sua empresa conseguiremos encontrar as melhores soluções ajustada ao seu problema.</p>
+						</div>
 					</header>
 
 					<!-- One -->
@@ -73,7 +74,7 @@ $activeNavbar = 'inicio';
 								<div class="8u 12u(narrower)">
 
 									<header>
-										<p>Se antigamente a porta de entrada era a primeira imagem da sua empresa, hoje o seu website é a primeira imagem. Como tal acreditamos que um website bem construido, tanto a nível tecnologico, bem como de imagem deve ser uma prioridade para qualquer empresa. Assim oferecemos um serviço de webdesign 100% dedicado ao cliente.</p>
+										<p style="text-align:justify;">Se antigamente a porta de entrada era a primeira imagem da sua empresa, hoje o seu website é a primeira imagem. Como tal acreditamos que um website bem construido, tanto a nível tecnologico, bem como de imagem deve ser uma prioridade para qualquer empresa. Assim oferecemos um serviço de webdesign 100% dedicado ao cliente.</p>
 									</header>
 								</div>
 								<div class="4u 12u(narrower) important(narrower)">
@@ -131,18 +132,11 @@ $activeNavbar = 'inicio';
 						<section class="wrapper style3 container special">
 
 							<header class="major">
-								<h2>O NOSSO <strong>PORTOFÓLIO</strong></h2>
+								<h2>Alguns dos nossos clientes</h2>
 							</header>
 							<div class="row">
-								<?php require_once 'system/includes/portofolioIndex.php' ?>
+								<?php require_once 'system/includes/clients.php' ?>
 							</div>
-
-							<footer class="major">
-								<ul class="buttons">
-									<li><a href="portofolio.php" class="button">VER MAIS <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a></li>
-								</ul>
-							</footer>
-
 						</section>
 
 				</article>
@@ -156,7 +150,7 @@ $activeNavbar = 'inicio';
 					</header>
 					<footer>
 						<ul class="buttons">
-							<li><a href="contact" class="button">CONTACTE-NOS!</a></li>
+							<li><a href="contact" class="button">CONTACTE-NOS <i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 						</ul>
 					</footer>
 

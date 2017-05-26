@@ -119,7 +119,6 @@
 				$(document).ready(function(){
 					$('.project-aditionalimage').click(function(){
 						$('#mainimage').attr('src', $(this).attr('src'));
-						console.log('2312');
 					});
 				});
 			</script>
