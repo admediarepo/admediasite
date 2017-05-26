@@ -7,8 +7,15 @@
 
 	$activeNavbar = 'contatos';
 
-	$secret = '6Lf5hCIUAAAAAI4SI-6XIDAyu9l1GTfctubBrAEv';
-	$publickey = 'AIzaSyBkIvALalO05rdva99ehdkc4DlVonpPe9g';
+	$recaptcha = $db->ObjectBuilder()->getOne('recaptcha');
+	$recaptchaCount = $db->count;
+	if($recaptchaCount){
+		$secret = $recaptcha->secret;
+		$publickey = $recaptcha->public;
+	}else{
+		$secret = NULL;
+		$publickey = NULL;
+	}
 ?>
 
 <!DOCTYPE HTML>
@@ -147,7 +154,7 @@
 	    <style type="text/css">
 	    	
 	    </style>
-	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?= $publickey ?>&callback=initMap"></script>
+	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?= ($publickey) ? $publickey : '' ?>&callback=initMap"></script>
 	</body>
 </html>
 
@@ -155,6 +162,11 @@
 
 
 if(isset($_POST['submitContact'])){
+
+	if($secret == NULL || $publickey == NULL){
+		alert('warning', 'Ups!', 'Lamentamos, estamos com problemas internos por favor tente novamente!');
+		return false;
+	}
 
 	
 	if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){

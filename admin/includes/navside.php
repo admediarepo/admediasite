@@ -16,39 +16,24 @@
                             </li>
                         </ul>
                     </li>
-                    <!--li>
-                        <a href="#"><i class="fa fa-file-o"></i> Pages<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Inicio</a>
-                            </li>
-                            <li>
-                                <a href="#">Contactos</a>
-                            </li>
-                            <li>
-                                <a href="#">Serviços<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Consultoria</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">WebDesign</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Software</a>
-                                    </li>
-                                     <li>
-                                        <a href="#">Gestão de Redes Sociais</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li-->
+                    
 					<li class="<?= ($_GET['page'] == 'mailbox/get') ? 'active-menu' : ''  ; ?>">
                         <a  href="?page=mailbox/get"><i class="fa fa-envelope"></i> Mail Box</a>
                     </li>
                     <li>
                         <a href="?page=gallery/view"><i class="fa fa-table"></i> Gallery</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= ($_GET['page'] == 'settings') ? 'active-menu' : ''  ; ?>"><i class="fa fa-cog"></i> Settings<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="<?= ($_GET['page'] == 'settings/recaptcha') ? 'active-menu' : ''  ; ?>" href="?page=settings/recaptcha">Google recaptcha</a>
+                            </li>
+                            <li>
+                                <a class="<?= ($_GET['page'] == 'settings/changepassword') ? 'active-menu' : ''  ; ?>" href="?page=settings/changepassword">Change password</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li>
