@@ -23,7 +23,6 @@ body {
     margin:10px 20px 10px 0px;
     background-color:transparent;
     padding:10px;
-    min-height:1200px;
 }
 
 .text-center {
@@ -80,7 +79,6 @@ position: fixed;
 }
 
 #page-wrapper {
-  position: relative;
   top: 50px;
 }
 .top-navbar .nav > li > a:hover, .top-navbar .nav > li > a:focus {
@@ -560,7 +558,6 @@ line-height: 1.428571429;
      #page-wrapper{
         margin: 0 0 0 260px;
         padding: 15px 30px;
-        min-height: 1200px;
 		
     }
 	
