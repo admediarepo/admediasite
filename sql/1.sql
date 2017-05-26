@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
   PRIMARY KEY (`id`),
   KEY `message_ref` (`message_id`),
   CONSTRAINT `message_ref` FOREIGN KEY (`message_id`) REFERENCES `messages` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table admedia2.answers: ~3 rows (approximately)
 DELETE FROM `answers`;
@@ -34,7 +34,9 @@ DELETE FROM `answers`;
 INSERT INTO `answers` (`id`, `subject`, `message`, `message_id`, `date`) VALUES
 	(3, 'wefowefj', 'ihfeiwhwie', 6, '0'),
 	(4, 'RE: Empresa - AdMedia', 'sdlfjçsldjfsçmjwergfkwefklweºfkewºfkewlfkweçlfkew', 6, '23-05-2017 16:04:08'),
-	(5, 'RE: Empresa - AdMedia', 'sdlfjçsldjfsçmjwergfkwefklweºfkewºfkewlfkweçlfkew', 6, '23-05-2017 16:04:31');
+	(5, 'RE: Empresa - AdMedia', 'sdlfjçsldjfsçmjwergfkwefklweºfkewºfkewlfkweçlfkew', 6, '23-05-2017 16:04:31'),
+	(6, 'RE: Empresa - AdMedia', 'efwefwefewewfefwefwfew', 6, '26-05-2017 14:24:23'),
+	(7, 'RE: Empresa - AdMedia', 'wefweoefwokewpfkfew+pewkef+pkew', 6, '26-05-2017 14:25:05');
 /*!40000 ALTER TABLE `answers` ENABLE KEYS */;
 
 -- Dumping structure for table admedia2.images
@@ -113,6 +115,21 @@ INSERT INTO `projects` (`id`, `title`, `desc`, `sum`, `mainimage`, `type`, `imag
 	(6, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Praesent ut viverra diam, id hendrerit leo. Aenean tincidunt at ipsum ac pharetra. Fusce iaculis vel risus et sagittis. Aenean at nisi tempor, vehicula leo non, vehicula neque. Maecenas arcu mi, condimentum non purus sed, posuere posuere orci. Mauris ultrices nec purus et iaculis. Aliquam cursus hendrerit laoreet. Suspendisse sollicitudin blandit condimentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi interdum lacus et lorem mollis, sit amet efficitur metus faucibus. Aenean at pretium turpis. Aliquam orci tellus, ultrices consectetur nisi ac, tincidunt vehicula arcu.', ' Curabitur rhoncus libero malesuada ante aliquet lobortis. Nulla varius imperdiet risus, vitae pharetra metus. Maecenas elementum risus nec mattis gravida. Vestibulum gravida, purus vitae commodo faucibus, nibh lacus dignissim massa, ut pulvinar augue ligula ut risus. Aenean in lorem dolor. Donec lobortis luctus diam, ut rhoncus tortor mollis non. Duis porttitor odio sit amet urna molestie facilisis non sed enim.', 'd816f096bfb5f9431145f349b7056f41.jpg', 1, NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 
+-- Dumping structure for table admedia2.recaptcha
+CREATE TABLE IF NOT EXISTS `recaptcha` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `public` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `secret` tinytext COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table admedia2.recaptcha: ~0 rows (approximately)
+DELETE FROM `recaptcha`;
+/*!40000 ALTER TABLE `recaptcha` DISABLE KEYS */;
+INSERT INTO `recaptcha` (`id`, `public`, `secret`) VALUES
+	(4, '6Lf5hCIUAAAAAMwzUP83wzZQy4VpCNFqvw2MN_Jv', '6Lf5hCIUAAAAAI4SI-6XIDAyu9l1GTfctubBrAEv');
+/*!40000 ALTER TABLE `recaptcha` ENABLE KEYS */;
+
 -- Dumping structure for table admedia2.services
 CREATE TABLE IF NOT EXISTS `services` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -131,18 +148,6 @@ INSERT INTO `services` (`id`, `name`, `imagem`, `type`) VALUES
 	(1, 'name', 'imagem', 1),
 	(2, 'name1', 'imagem1', 1);
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
-
--- Dumping structure for table admedia2.socialmedia
-CREATE TABLE IF NOT EXISTS `socialmedia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- Dumping data for table admedia2.socialmedia: ~0 rows (approximately)
-DELETE FROM `socialmedia`;
-/*!40000 ALTER TABLE `socialmedia` DISABLE KEYS */;
-/*!40000 ALTER TABLE `socialmedia` ENABLE KEYS */;
 
 -- Dumping structure for table admedia2.types
 CREATE TABLE IF NOT EXISTS `types` (
@@ -168,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table admedia2.users: ~0 rows (approximately)
 DELETE FROM `users`;
