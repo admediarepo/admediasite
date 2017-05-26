@@ -5,6 +5,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
   background-color: rgba(204, 204, 204, 0.69);
+  height: 100%;
 }
 
  #wrapper {
@@ -14,7 +15,7 @@ body {
 
 #page-wrapper {
     padding: 15px 15px;
-    min-height: 600px;
+    min-height: 100vh;
     background: #f3f3f3;
    
 }
@@ -581,6 +582,7 @@ line-height: 1.428571429;
     }
     .navbar-side {
       top:50px;
+      padding-top:20px;
     }
  @media(max-width:480px) {
 }
