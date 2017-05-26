@@ -3,6 +3,17 @@
 
 	$mail = new PHPMailer;
 
+	//$mail->SMTPDebug = 3;  // Enable verbose debug output
+
+	$mail->isSMTP();  // Set mailer to use SMTP
+	$mail->Host = Config::get('mail/host');  // Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;  // Enable SMTP authentication
+	$mail->Username = Config::get('mail/username'); // SMTP username
+	$mail->Password = Config::get('mail/password'); // SMTP password
+	$mail->SMTPSecure = Config::get('mail/protocol');  // Enable TLS encryption, `ssl` also accepted
+	$mail->Port = Config::get('mail/port'); // TCP port to connect to
+
+
 	$messageId = isset($_GET['id']) ? preg_replace('/\D/', '', $_GET['id']) : NULL;
 	$message = $db->ObjectBuilder()->where('id', $messageId)->getOne('messages');
 	$answersMessages = $db->ObjectBuilder()->where('message_id', $messageId)->get('answers');
@@ -173,15 +184,6 @@ if(isset($_POST['submitAnswer'])){
 
 
 
-	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
-	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'noreplyadmedia@gmail.com';                 // SMTP username
-	$mail->Password = 'atc24#hp';                           // SMTP password
-	$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 465;                                    // TCP port to connect to
 
 
 	$mail->setFrom('noreplyadmedia@gmail.com', 'AdMedia');

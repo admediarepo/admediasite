@@ -36,57 +36,56 @@
     </div>
     <!-- /. WRAPPER  -->
 
-    <script type="text/javascript">
-            $(document).ready(function(){
-                function removeImage(id, typeOfImage = 'aditional') {
-                    var data = {};
-                    if(typeOfImage =='aditional'){
-                        data = { id: id, typeOfImage: 'ADITIONAL_IMAGE' };
-                    }else{
-                      if(typeOfImage =='main'){
-                        data = { id: id, typeOfImage: 'MAIN_IMAGE' };
-                      }
+<script type="text/javascript">
+  $(document).ready(function(){
+      function removeImage(id, typeOfImage = 'aditional') {
+          var data = {};
+          if(typeOfImage =='aditional'){
+              data = { id: id, typeOfImage: 'ADITIONAL_IMAGE' };
+          }else{
+            if(typeOfImage =='main'){
+              data = { id: id, typeOfImage: 'MAIN_IMAGE' };
+            }
+          }
+           $.ajax({
+            url: "ajax/projectdelete", 
+            data: data,
+            type: 'POST', 
+            success: function(data1) {
+              console.log(data1);
+              var dataParse = $.parseJSON(data1);
+               if(dataParse.success == true){
+                  alertMessage('success', 'Successo!', 'Imagem Eliminada com successo!');
+                  if(typeOfImage =='aditional'){
+                      $('.preview-imgs[attr-image-id="'+id+'"]').remove();
+                  }else{
+                    if(typeOfImage =='main'){
+                     $('.preview-imgs[attr-project-id="'+id+'"]').remove();
                     }
-                     $.ajax({
-                      url: "ajax/projectdelete", 
-                      data: data,
-                      type: 'POST', 
-                      success: function(data1) {
-                        console.log(data1);
-                        var dataParse = $.parseJSON(data1);
-                         if(dataParse.success == true){
-                            alertMessage('success', 'Successo!', 'Imagem Eliminada com successo!');
-                            if(typeOfImage =='aditional'){
-                                $('.preview-imgs[attr-image-id="'+id+'"]').remove();
-                            }else{
-                              if(typeOfImage =='main'){
-                               $('.preview-imgs[attr-project-id="'+id+'"]').remove();
-                              }
-                            }
+                  }
 
-                         }
-                      },
-                      error: function (request, status, error) {
-                            alertMessage('danger', 'Error!', request.responseText);
-                        }
-                   });
+               }
+            },
+            error: function (request, status, error) {
+                  alertMessage('danger', 'Error!', request.responseText);
+              }
+         });
 
-                }
-                $('.img-remove').click(function(){
-                    var attr_image_id = $(this).attr('attr-image-id');
-                    var attr_project_id = $(this).attr('attr-project-id');
-                    if(typeof attr_image_id !== typeof undefined && attr_image_id !== false){
-                      removeImage(attr_image_id, 'aditional');
-                    }else{
-                      if(typeof attr_project_id !== typeof undefined && attr_project_id !== false){
-                        removeImage(attr_project_id, 'main');
-                      }
-                    }
-                    
-                });
-            });
+      }
+      $('.img-remove').click(function(){
+          var attr_image_id = $(this).attr('attr-image-id');
+          var attr_project_id = $(this).attr('attr-project-id');
+          if(typeof attr_image_id !== typeof undefined && attr_image_id !== false){
+            removeImage(attr_image_id, 'aditional');
+          }else{
+            if(typeof attr_project_id !== typeof undefined && attr_project_id !== false){
+              removeImage(attr_project_id, 'main');
+            }
+          }
+          
+      });
+  });
 
     </script>
-
-</body>
+  </body>
 </html>
