@@ -1,11 +1,9 @@
 <!-- Footer -->
 	<footer id="footer">
 		<ul class="icons">
-			<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-			<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+			<li><a href="https://www.facebook.com/admediaportugal/" target="_blank" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
 		</ul>
-
+		<br>
 		<ul class="copyright">
 			<li>AdMedia &copy; 2017</li>
 		</ul>

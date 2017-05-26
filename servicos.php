@@ -59,7 +59,7 @@
 											<section>
 												<img src=" http://placehold.it/700x300" alt="Consultoria" />
 												<header>
-													<h3>CONSTULTORIA</h3>
+													<h3>CONSULTORIA</h3>
 												</header>
 												<p><b>Ut in faucibus neque. Maecenas eget posuere eros. Aliquam erat volutpat. Integer fringilla magna ut dolor ornare, a feugiat ex suscipit. Praesent eros lacus, varius quis orci nec, lobortis volutpat lorem. Vivamus sagittis dolor vitae diam posuere, quis viverra arcu cursus. 
 												</b></p>
@@ -93,7 +93,7 @@
 											<section>
 												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 												<header>
-													<h3>software</h3>
+													<h3>SOFTWARE</h3>
 												</header>
 												<p>Ut in faucibus neque. Maecenas eget posuere eros. Aliquam erat volutpat. Integer fringilla magna ut dolor ornare, a feugiat ex suscipit. Praesent eros lacus, varius quis orci nec, lobortis volutpat lorem. Vivamus sagittis dolor vitae diam posuere, quis viverra arcu cursus. Curabitur euismod lorem lectus, eu hendrerit metus fringilla ac. Ut sit amet egestas est, vitae viverra ex. Cras ac volutpat sapien, ac tristique quam. Vestibulum maximus leo in odio blandit vestibulum. Integer consequat pulvinar ante in tristique. Ut accumsan metus id hendrerit blandit. Etiam eleifend venenatis efficitur. Pellentesque non fringilla odio. In at quam et eros vehicula consequat. Praesent dapibus metus neque.</p>
 											</section>

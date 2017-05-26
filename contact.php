@@ -39,8 +39,8 @@
 
 					<header class="special container">
 						<span class="icon fa-envelope"></span>
-						<h2>CONTACTE-NOS!</h2>
-						<p>Responderemos o mais breve possível.</p>
+						<h2 style="text-align:center;">CONTACTE-NOS!</h2>
+						<p style="text-align:center;">Responderemos o mais breve possível.</p>
 					</header>
 
 					<!-- One -->
@@ -79,7 +79,7 @@
 														<div class="g-recaptcha" style=" display: inline-block;" data-sitekey="6Lf5hCIUAAAAAMwzUP83wzZQy4VpCNFqvw2MN_Jv"></div>
 													</li>
 												</ul>
-												
+												<br>
 												<ul class="buttons">
 													<li><input type="submit" name="submitContact" class="special" value="ENVIAR" /></li>
 												</ul>
@@ -221,7 +221,7 @@ if(isset($_POST['submitContact'])){
         	return false;
         }
     }else{
-    	alert('danger', 'Error!', 'Por favor, verifique que não é um robô!.');
+    	alert('danger', 'Error!', 'Por favor, verifique que não é um robô!');
         return false;
     }
 }
