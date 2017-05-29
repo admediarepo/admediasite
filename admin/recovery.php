@@ -9,14 +9,15 @@ if(isLoggedIn())
     redirect('index.php');
 }
 $reset_token = (isset($_GET['reset_token'])) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_GET['reset_token']) : NULL;
-if($reset_token != NULL){
-	$resetTokenUser = $db->where('password_token', $reset_token)->getOne('users');
-	$resetTokenUserCount = $db->count;
-	if($resetTokenUserCount == 0){
+$email = (isset($_GET['e'])) ? filter_var($_GET['e'], FILTER_SANITIZE_STRING) : NULL;
+$email = safe('decrypt', $email);
+if($email != NULL && $reset_token != NULL){
+    $userByGet = $db->ObjectBuilder()->where('email', $email)->getOne('users');
+	$userByGetCount = $db->count;
+	if($userByGetCount == 0){
 		 redirect('index.php');
 	}
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +31,7 @@ if($reset_token != NULL){
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3">
-            <?php if($reset_token == NULL): ?>
+            <?php if($reset_token == NULL || $email == NULL): ?>
                 <div class="account-wall">
                     <img class="profile-img" src="../images/logo_horizontal.png" alt="AdMedia">
                     <form class="form-signin" method="POST">
@@ -66,14 +67,18 @@ if($reset_token != NULL){
 </body>
 </html>
 <?php
+
+/**
+ * Change password!
+ */
 if(isset($_POST['submitNewPassword'])){
 	$password = filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING);
 	$password_c = filter_input(INPUT_POST,'password_c',FILTER_SANITIZE_STRING);
 
-	/*if($resetTokenUser->time <= time()){
+	if($userByGet->date <= time()){
     	alert('danger', 'Ups!', 'Token expirado!');
         return false;
-    } */
+    }
 
 	if($password == NULL){
         alert('danger', 'Ups!', 'Introduza uma password!');
@@ -88,8 +93,6 @@ if(isset($_POST['submitNewPassword'])){
         alert('danger', 'Ups!', 'As passwords não coincidem!');
         return false;
     }
-
-
 
     if($db->where('password_token', $reset_token)->update('users', ['password_token' => NULL, 'password' => password_hash($password, PASSWORD_BCRYPT) ])){
 		redirect('index.php');
@@ -120,37 +123,29 @@ if(isset($_POST['submitRecovery'])){
     }
     sleep(1);
 
-    if($db->where('id', $user->id)->update('users', ['password_token' => sha1(md5(uniqid())), 'date' => (time() + strtotime("+30 seconds")) ])){
+    if($db->where('id', $user->id)->update('users', [ 'password_token' => sha1(md5(uniqid())), 'date' => strtotime("+5 minutes", time()) ])){
     	$password_token = $db->ObjectBuilder()->where('id', $user->id)->getOne('users')->password_token;
 
-	   	$link = ((isset($_SERVER['HTTPS'])) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST']."/admin/recovery?reset_token=" . $password_token;
+	   	$link = ((isset($_SERVER['HTTPS'])) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST']."/admin/recovery?reset_token=" . $password_token . "&e=" . safe('encrypt',$user->email);
 
 		$mail->addAddress('noreplyadmedia@gmail.com'/*$user->email */);  // changeeee!!!!
 
 		$mail->Subject = 'Password reset link';
 		$mail->Body    = 'Recently, they asked for a new password,<br>
 						<b>if it was not you please ignore this email</b>
-						<br>Link for reset password: '. $link;
+						<br>Link for reset password: <br>'. $link . '<br>'
+                        . '<b>this link is valid only 5 minutes. </b>';
 		$mail->AltBody = 'Recently, they asked for a new password,
 						if it was not you please ignore this email
-						Link for reset password: '. $link;
+						Link for reset password: '. $link . ' This link is valid only 5 minutes.';
 
 		if($mail->send()) {
-			alert('success', 'Sucesso!', 'Resposta enviada com sucesso!');
+			alert('success', 'Sucesso!', 'Foi enviado um email, com a opão de mudar a password!');
 			return true;
-		    
 		} else {
 			alert('danger', 'Danger!', 'Problema ao enviar email,tente mais tarde!');
 			return true;
 		}
     }
-
-
-
-   /* if($db->where('id', $user->id)->update('users', [ 'password_token' => sha1(md5(uniqid())) ]){
-
-    } */
-
-    
 
 }
