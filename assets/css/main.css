@@ -2394,6 +2394,7 @@
 	}
 
 	#banner {
+		/*
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
 		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/banner.jpg");
@@ -2403,7 +2404,17 @@
 		color: #fff;
 		cursor: default;
 		padding: 6em 0;
-		text-align: center;
+		text-align: center; */
+		background-attachment: fixed;
+	    background-color: #c33a32;
+	    background-image: url(../../images/banner.jpg);
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    color: #fff;
+	    cursor: default;
+	    padding: 6em 0;
+	    text-align: center;
 	}
 
 		#banner .inner {
@@ -2415,7 +2426,7 @@
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
 			animation-fill-mode: forwards;
-			background: rgba(39, 34, 32, 0.4);
+			/*background: rgba(39, 34, 32, 0.4); */
 			color: #fff;
 			display: inline-block;
 			opacity: 0;
@@ -2679,7 +2690,7 @@
 		/* Banner */
 
 			#banner {
-				background-size: 15em, 15em, auto, cover;
+				background-size: cover;
 			}
 
 		/* Main */
@@ -3123,8 +3134,8 @@
 		/* Banner */
 
 			#banner {
-				background-size: 10em, 10em, auto, cover;
-				padding: 6em 0;
+				background-size: cover;
+				padding: 4em 0;
 			}
 
 				#banner .inner {
