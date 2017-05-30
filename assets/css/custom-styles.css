@@ -126,8 +126,8 @@ border-color: #18A88B;
    DASHBOARD STYLES    
 ------------------------------------------------*/
 .page-header {
+margin-top:10vh;
 padding-bottom: 9px;
-margin: 10px 0 20px;
 border-bottom: 1px solid transparent;
 }
 .panel-left{width: 90px;height: 90px;
