@@ -3,9 +3,9 @@
 <div class="row">
     <div class="col-md-12">
         <h1 class="page-header">
-            <div class="panel panel-default">
+            <div style="margin-top:10vh;" class="panel panel-default">
             	<div class="panel-body">
-            		Bem Vindo ao Painel de Administração do site!
+            		<p style="text-align:center;font-size:20px;">Bem Vindo ao Painel de Administração do site!</p>
             	</div>
             </div>
         </h1>
