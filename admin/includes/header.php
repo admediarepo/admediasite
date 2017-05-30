@@ -10,3 +10,4 @@
     <!-- Google Fonts-->
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Montserrat:400,700'>
     <link rel="stylesheet" href="../assets/css/animate.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />

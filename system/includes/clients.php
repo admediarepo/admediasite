@@ -1,11 +1,19 @@
-<div class="6u 12u(narrower)">
-	<section>
-		<ul>
-			<li><img src="http://placehold.it/200x200"></li>
-			<li><img src="http://placehold.it/200x200"></li>
-			<li><img src="http://placehold.it/200x200"></li>
-			<li><img src="http://placehold.it/200x200"></li>
-			<li><img src="http://placehold.it/200x200"></li>
-		</ul>
-	</section>
+<div class="12u 12u(narrower)">
+	<div class="row" style="display: block; margin: 0 auto;">
+		<div class="2u 12u(narrower)">
+			<section class="clients">
+				<img src="images/projects/noimg.png" alt="1"/>
+			</section>
+		</div>
+		<div class="2u 12u(narrower)">
+			<section class="clients">
+				<img src="images/projects/noimg.png" alt="1"/>
+			</section>
+		</div>
+		<div class="2u 12u(narrower)">
+			<section class="clients">
+				<img src="images/projects/noimg.png" alt="1"/>
+			</section>
+		</div>
+	</div>
 </div>

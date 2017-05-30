@@ -48,7 +48,7 @@ $activeNavbar = 'inicio';
 						<p>DESENVOLVEMOS <strong>IDEIAS 360º</strong-->
 						<footer>
 							<ul class="buttons vertical">
-								<li><a href="#main" class="button fit scrolly">MAIS &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a></li>
+								<li><a href="#main" class="button-admedia fit scrolly">MAIS &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a></li>
 							</ul>
 						</footer>
 
