@@ -6,6 +6,11 @@
     $_GET['page'] = (isset($_GET['page']) && !empty($_GET['page'])) ? htmlentities(trim($_GET['page'])) : 'default';
     $page = $_GET['page'];
     $blackListFiles = [ 'login','index','logout','ajax/projectdelete', 'recovery' ];
+
+    /**
+     * Delete messages after 15 days
+     */
+    $db->rawQuery('DELETE FROM messages WHERE data < (CURDATE() - INTERVAL 15 DAY)');
 ?>
 <!DOCTYPE html>
 <html>

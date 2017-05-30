@@ -5,7 +5,7 @@
                     <li>
                         <a class="<?= ($_GET['page'] == 'default' || !isset($_GET['page'])) ? 'active-menu' : ''  ; ?>" href="?page="><i class="fa fa-home"></i>Home</a>
                     </li>
-                    <li>
+                    <li class="<?= (strpos($_GET['page'], 'projects') !== false) ? 'active' : ''  ; ?>" >
                         <a href="#"><i class="fa fa-book "></i> Projects <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -17,14 +17,14 @@
                         </ul>
                     </li>
                     
-					<li class="<?= ($_GET['page'] == 'mailbox/get') ? 'active-menu' : ''  ; ?>">
-                        <a  href="?page=mailbox/get"><i class="fa fa-envelope"></i> Mail Box</a>
+					<li>
+                        <a class="<?= ($_GET['page'] == 'mailbox/get') ? 'active-menu' : ''  ; ?>" href="?page=mailbox/get"><i class="fa fa-envelope"></i> Mail Box</a>
                     </li>
                     <li>
                         <a href="?page=gallery/view"><i class="fa fa-table"></i> Gallery</a>
                     </li>
 
-                    <li>
+                    <li class="<?= (strpos($_GET['page'], 'settings') !== false) ? 'active' : ''  ; ?>">
                         <a href="<?= ($_GET['page'] == 'settings') ? 'active-menu' : ''  ; ?>"><i class="fa fa-cog"></i> Settings<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
