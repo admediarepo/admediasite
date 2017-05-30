@@ -3246,13 +3246,13 @@
 }
 
 .clients > img {
-  max-width: 100%;
+  max-width: 20vh;
   object-fit: cover;
 }
 
 @media screen and (max-width:736px){
 	.clients > img{
-		max-width:30%;
+		max-width:10vh;
 	}
 	section:first-child {
 		margin-top: 0;
