@@ -5,7 +5,7 @@
     define('INCLUDE',true);
     $_GET['page'] = (isset($_GET['page']) && !empty($_GET['page'])) ? htmlentities(trim($_GET['page'])) : 'default';
     $page = $_GET['page'];
-    $blackListFiles = [ 'login','index','logout','ajax/projectdelete' ];
+    $blackListFiles = [ 'login','index','logout','ajax/projectdelete', 'recovery' ];
 ?>
 <!DOCTYPE html>
 <html>

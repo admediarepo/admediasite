@@ -4,6 +4,7 @@ require_once '../core/init.php';
 
 require_once 'includes/phpmailerConfigure.php';
 
+
 if(isLoggedIn())
 {
     redirect('index.php');
@@ -17,6 +18,8 @@ if($email != NULL && $reset_token != NULL){
 	if($userByGetCount == 0){
 		 redirect('index.php');
 	}
+
+
 }
 
 ?>
@@ -31,7 +34,7 @@ if($email != NULL && $reset_token != NULL){
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3">
-            <?php if($reset_token == NULL || $email == NULL): ?>
+            <?php if($reset_token == NULL || $email == NULL || $userByGet->password_token != $reset_token): ?>
                 <div class="account-wall">
                     <img class="profile-img" src="../images/logo_horizontal.png" alt="AdMedia">
                     <form class="form-signin" method="POST">
@@ -67,6 +70,13 @@ if($email != NULL && $reset_token != NULL){
 </body>
 </html>
 <?php
+if($email != NULL && $reset_token != NULL){
+ if($userByGet->password_token != $reset_token){
+    alert('danger', 'Ups!', 'Este Token é inválido!');
+    return false;
+    }
+}
+
 
 /**
  * Change password!
