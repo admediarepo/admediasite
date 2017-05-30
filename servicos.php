@@ -112,7 +112,7 @@
 											<section style="border: solid 1px rgba(128, 136, 133, 0.25); padding: 10px;">
 											<h3 style="text-align: center; font-weight: 500;"> PROJETO RELACIONADO </h3>
 											<hr>
-												<a href="projeto?id=<?= $result->id ?>" class="image featured"><img src="images/projects/<?= $result->mainimage ?>" alt="<?= $result->title ?>" style="object-fit: cover;width: 90%; max-height: 240px;min-height: 100px;" /></a>
+												<a href="projeto?id=<?= $result->id ?>" class="image featured"><img src="images/projects/<?= $result->mainimage ?>" alt="<?= $result->title ?>" style="object-fit: cover;width: 60%; max-height: 240px;min-height: 100px;" /></a>
 												<header>
 													<h3 style="font-weight: 600; word-wrap: break-word; margin-left: 10px;"><?= $result->title ?></h3>
 												</header>
