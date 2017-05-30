@@ -3259,3 +3259,8 @@
 		margin-bottom: 0;
 	}
 }
+
+p{
+	word-wrap: break-word;
+	text-align: justify;
+}

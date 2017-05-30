@@ -144,7 +144,7 @@ $activeNavbar = 'inicio';
 
 					<header>
 						<h2>FICOU COM DÚVIDAS?</h2>
-						<p>Não hesite em contactar-nos. Responderemos o mais breve possível.</p>
+						<p style="text-align:center;">Não hesite em contactar-nos. Responderemos o mais breve possível.</p>
 					</header>
 					<footer>
 						<ul class="buttons">
