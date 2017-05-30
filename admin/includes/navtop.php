@@ -1,5 +1,5 @@
         <nav class="top-navbar navbar navbar-default" role="navigation">
-            <div class="navbar-header">
+            <div style="margin-top:2vh" class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
