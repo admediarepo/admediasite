@@ -14,7 +14,7 @@
 			<!-- nav bar -->
 			<header id="header" class="<?= (isset($class)) ? $class : '' ; ?>">
 				<a href="index">
-					<div id="logo" style="display: none;">
+					<div id="logo" style="<?= ($typeNavbar == 1) ? 'display: none;' : '' ; ?>">
 						<img src="images/logo_horizontal.png" height="40" style="margin-left:10px" />
 					</div>
 				</a>
