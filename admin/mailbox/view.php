@@ -166,7 +166,6 @@ if(isset($_POST['submitAnswer'])){
     	'subject' => $subject,
     	'message' => $messageForm,
     	'message_id' => $message->id,
-    	'date' => date('d-m-Y H:i:s'),
     ];
 
 

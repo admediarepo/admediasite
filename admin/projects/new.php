@@ -17,14 +17,14 @@ $types = $db->ObjectBuilder()->get('types');
 	                <p class="help-block">Summary:</p>
 	                <textarea name="sum" class="form-control" rows="2" cols="50" minlength="20" ></textarea>
 	            </div>
-	            <div class="form-group">
+	            <!--div class="form-group">
 	                <p class="help-block">Main Image:</p>
 	                <input class="form-control" type="file" name="main_image">
 	            </div>
    	            <div class="form-group">
 	             <p class="help-block">Adicional Images:</p>
 	              <input class="form-control" type="file" name="images" multiple="true">
-	            </div>
+	            </div-->
 	            <div class="form-group">
 	                <p class="help-block">Description:</p>
 	                <textarea name="desc" class="form-control" rows="8" cols="50" minlength="50"></textarea> 
@@ -54,7 +54,7 @@ if(isset($_POST['submitNew'])){
 	$projectSum = isset($_POST['sum']) ? h($_POST['sum']) : NULL;
 	$projectMainImage = isset($_POST['main_image']) ? h($_POST['main_image']) : NULL;
 	$projectDesc = isset($_POST['desc']) ? h($_POST['desc']) : NULL;
-
+	$projectType = isset($_POST['type']) ? $_POST['type'] : NULL;
 
 	if($projectTitle == NULL){
 		alert('danger5', 'Ups!', 'Preencha o titulo!');
@@ -71,17 +71,32 @@ if(isset($_POST['submitNew'])){
 		return false;
 	}
 
+	if(strlen($projectTitle) > 200){
+		alert('warning', 'Ups!', 'Titulo não pode conter mais de 100 caracteres');
+		return false;
+	}
+
+	if(strlen($projectSum) > 600){
+		alert('warning', 'Ups!', 'Sumario não pode conter mais de 600 caracteres');
+		return false;
+	}
+
+	if($projectType == NULL){
+		alert('warning', 'Ups!', 'Preencha o tipo do projeto!');
+		return false;
+	}
+
 	$data = [	
 		'sum' => $projectSum,
 		'desc' => $projectDesc,
 		'title' => $projectTitle,
-		'type' => 1,
-			//imagens..
+		'type' => $projectType,
 	];
 
 	$id = $db->insert('projects', $data);
 	if($id){
-	    alert('success', 'Success!', 'Projecto criaco com sucesso! id= '. $id);
+	    //alert('success', 'Success!', 'Projecto criaco com sucesso! id= '. $id);
+	    redirect('?page=projects/update&id='. $id);
 	}
 
 }
