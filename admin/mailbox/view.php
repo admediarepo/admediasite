@@ -1,18 +1,5 @@
 <?php
-    require 'libs/phpmailer/PHPMailerAutoload.php';
-
-	$mail = new PHPMailer;
-
-	//$mail->SMTPDebug = 3;  // Enable verbose debug output
-
-	$mail->isSMTP();  // Set mailer to use SMTP
-	$mail->Host = Config::get('mail/host');  // Specify main and backup SMTP servers
-	$mail->SMTPAuth = true;  // Enable SMTP authentication
-	$mail->Username = Config::get('mail/username'); // SMTP username
-	$mail->Password = Config::get('mail/password'); // SMTP password
-	$mail->SMTPSecure = Config::get('mail/protocol');  // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = Config::get('mail/port'); // TCP port to connect to
-
+	require 'includes/phpmailerConfigure.php';
 
 	$messageId = isset($_GET['id']) ? preg_replace('/\D/', '', $_GET['id']) : NULL;
 	$message = $db->ObjectBuilder()->where('id', $messageId)->getOne('messages');
@@ -183,10 +170,6 @@ if(isset($_POST['submitAnswer'])){
     ];
 
 
-
-
-
-	$mail->setFrom('noreplyadmedia@gmail.com', 'AdMedia');
 	$mail->addAddress($message->mail, $message->name);  
 	$mail->addReplyTo($message->mail, $subject);
 	/*$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient

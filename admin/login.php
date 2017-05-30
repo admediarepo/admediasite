@@ -22,8 +22,10 @@
                     <form class="form-signin" method="POST">
                         <input type="text" class="form-control" placeholder="Email" name="email" autofocus>
                         <input type="password" class="form-control" placeholder="Password" name="password" >
-                        <button class="btn btn-lg btn-admedia btn-block" type="submit" name="submitLogin" style="border-radius: 0; c">Login</button>
+                        <button class="btn btn-lg btn-admedia btn-block" type="submit" name="submitLogin" style="border-radius: 0;">Login</button>
+                         <a href="recovery" style="float: right;">Forgot your password ?</a>
                     </form>
+
                 </div><br>
                 <h4 style="text-align:center; color:#5c6771; margin:0 auto;">Made with <i class="fa fa-heart"></i> AdMedia &copy; 2017</h4>
             </div>
@@ -37,7 +39,7 @@
 </body>
 </html>
 <?php
-$db->insert('users', ['email' => 'admedia@admedia.com', 'password' => password_hash('admedia13', PASSWORD_BCRYPT)]);
+//$db->insert('users', ['email' => 'admedia@admedia.com', 'password' => password_hash('admedia13', PASSWORD_BCRYPT)]);
 
 if(isset($_POST['submitLogin'])){
 
