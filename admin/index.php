@@ -27,7 +27,14 @@
                         if(file_exists($page.'.php') && !in_array($page, $blackListFiles)){
                             require_once($page.'.php');
                         } else { ?>
-                            <h1>Esta Pagina não existe!</h1>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="font-size:20px;">
+                                    <h1><strong>ERRO!</strong></h1>
+                                    <div class="panel-body">
+                                        <h2>Esta Pagina não existe!</h2>
+                                    </div>
+                                </div>
+                            </div>
                 <?php   } ?>
                 <!-- /. ROW  -->
             </div>

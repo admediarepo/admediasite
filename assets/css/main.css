@@ -2343,7 +2343,7 @@
 			}
 
 			.dropotron > li:hover > a {
-				background: #83d3c9;
+				background: #ed3c26;
 				color: #fff;
 			}
 
@@ -3104,6 +3104,7 @@
 
 			ul.buttons {
 				text-align: center;
+				margin-top:30vh;
 			}
 
 		/* Wrapper */
@@ -3247,4 +3248,14 @@
 .clients > img {
   max-width: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width:736px){
+	.clients > img{
+		max-width:30%;
+	}
+	section:first-child {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }

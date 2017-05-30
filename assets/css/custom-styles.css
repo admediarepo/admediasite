@@ -158,6 +158,8 @@ color: #8A8A8A;
 }
 .panel-default {
   border-color: #ECECEC;
+  margin-top:8vh;
+  margin-bottom: 0px;
 }
 .panel-default > .panel-heading {
 color: #000;
