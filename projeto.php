@@ -213,12 +213,13 @@
 											<p style="word-wrap: break-word;text-align: justify;"><?= $result->desc ?></p>
 																					<?php if($aditionalmages): ?>
 												<div class="project-aditionalimages" >
-												<?php foreach($aditionalmages as $img): ?>
-													<img id="myImg" src="images/projects/<?= $img->name ?>" class="project-aditionalimage">
+												<?php foreach($aditionalmages as $key => $img): ?>
+													<img id="aditionalimage-<?= $key ?>" src="images/projects/<?= $img->name ?>" class="project-aditionalimage" onclick="modalFunction(<?= $key ?>)">
 												<?php endforeach; ?>
 													<div id="myModal" class="modal" data-backdrop="true">
 														<span class="close">&times;</span>
 														<img class="modal-content" id="img01">
+														<img class="modal-content" id="img02">
 														<div id="caption"></div>
 													</div>
 												</div>
@@ -233,17 +234,18 @@
 		<!-- Scripts -->
 			<script>
 			// Get the modal
-				var modal = document.getElementById('myModal');
 
-				// Get the image and insert it inside the modal - use its "alt" text as a caption
-				var img = document.getElementById('myImg');
+			function modalFunction(id){
+				var modal = document.getElementById('myModal');
+				
+				var img = document.getElementById('aditionalimage-'+ id);
 				var modalImg = document.getElementById("img01");
+
 				var captionText = document.getElementById("caption");
-				img.onclick = function(){
-					modal.style.display = "block";
-					modalImg.src = this.src;
-					captionText.innerHTML = this.alt;
-				}
+
+				modal.style.display = "block";
+				modalImg.src = img.src;
+				captionText.innerHTML = img.alt;
 
 				// Get the <span> element that closes the modal
 				var span = document.getElementsByClassName("close")[0];
@@ -252,6 +254,8 @@
 				span.onclick = function() { 
 					modal.style.display = "none";
 				}
+			}
+				
 			</script>
 
 			<script src="assets/js/jquery.min.js"></script>
@@ -264,11 +268,11 @@
 			<script src="assets/js/main.js"></script>
 
 			<script type="text/javascript">
-				$(document).ready(function(){
+				/*$(document).ready(function(){
 					$('.project-aditionalimage').click(function(){
 						$('#mainimage').attr('src', $(this).attr('src'));
 					});
-				});
+				}); */
 			</script>
 
 	</body>
