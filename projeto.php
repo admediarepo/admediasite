@@ -38,9 +38,9 @@
 
 			}
 			.project-aditionalimage {
-				width: 20vh;
-				min-width: 18vh;
-				margin-right: 5px;
+				width: 15vh;
+				min-width: 15vh;
+				margin-right: 20px;
 				max-width: 20vh;
 				height: 15vh;
 				min-height: 15vh;
@@ -77,9 +77,9 @@
 			}
 
 				.project-aditionalimage {
-					width: 13vh;
+					width: 15vh;
 					min-width: 40px;
-					margin-right: 5px;
+					margin-right: 20px;
 					max-width: 15vh;
 					display: inline-block;
 	    			object-fit: cover;
